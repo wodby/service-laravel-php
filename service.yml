@@ -1,0 +1,23 @@
+name: laravel
+type: service
+from: php
+icon: laravel
+title: Laravel
+scalable: false
+update: auto
+hostname: laravel
+labels:
+- laravel
+options:
+- version: '8.1'
+  default: true
+  
+build:
+  connect: true
+  dockerfile: Dockerfile
+  templates:
+  - name: boilerplate
+    title: Laravel Boilerplate
+    repo: https://github.com/rappasoft/laravel-boilerplate
+    tag: ^8
+    pipeline: pipeline.yml
