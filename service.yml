@@ -1,4 +1,4 @@
-name: laravel
+name: php-laravel
 type: service
 from: php
 icon: laravel
