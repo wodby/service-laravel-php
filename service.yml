@@ -18,6 +18,10 @@ links:
   env:
   - name: QUEUE_CONNECTION
     value: redis
+  selectors:
+  - type: datastore
+    labels:
+    - redis
 
 build:
   connect: true
