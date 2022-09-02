@@ -31,7 +31,7 @@ jobs:
         key: 'npm-{{ hash "yarn.lock" }}-v1'
         path: node_modules
 
-    - run: wodby ci build laravel
+    - run: wodby ci build php
     - run: wodby ci build nginx
     - run: wodby ci release
     - run: wodby ci deploy
