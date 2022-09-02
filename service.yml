@@ -1,13 +1,13 @@
 name: php-laravel
 type: service
 from: php
-icon: laravel
-title: Laravel
-scalable: false
+title: PHP (Laravel)
+
 update: auto
-hostname: laravel
+
 labels:
 - laravel
+
 options:
 - version: '8.1'
   default: true
