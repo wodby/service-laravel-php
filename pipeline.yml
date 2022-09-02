@@ -1,0 +1,37 @@
+version: 0.1
+
+workflows:
+  main:
+    jobs:
+    - build
+
+jobs:
+  build:
+    steps:
+    - clone
+
+    - cache_restore:
+        path: ~/.composer
+        key: 'composer-{{ hash "composer.lock" }}-v1'
+
+    - cache_restore:
+        path: node_modules
+        key: 'npm-{{ hash "yarn.lock" }}-v1'
+
+    - run: wget -qO- https://api.wodby.com/api/v1/get/cli?version=2.0 | sh
+    - run: wodby ci init $WODBY_BUILD_ID
+    
+    - run: wodby ci run -v $HOME/.composer:/home/wodby/.composer -s matomo -- composer install -n --no-ansi
+    - cache_save:
+        key: 'composer-{{ hash "composer.lock" }}-v1'
+        path: ~/.composer
+
+    - run: wodby ci run -i wodby/node -- npm i
+    - cache_save:
+        key: 'npm-{{ hash "yarn.lock" }}-v1'
+        path: node_modules
+
+    - run: wodby ci build laravel
+    - run: wodby ci build nginx
+    - run: wodby ci release
+    - run: wodby ci deploy
