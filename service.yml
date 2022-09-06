@@ -1,6 +1,7 @@
 name: php-laravel
 type: service
 from: php
+image: wodby/laravel-php
 title: PHP (Laravel)
 
 update: auto
