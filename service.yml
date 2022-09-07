@@ -1,4 +1,4 @@
-name: php-laravel
+name: laravel-php
 type: service
 beta: true
 from: php
@@ -30,7 +30,7 @@ links:
     - redis
 
 derivatives:
-- name: php-laravel-queue
+- name: laravel-php-queue
   icon: laravel
   title: Laravel Queue
   args: ['php', 'artisan', 'queue:listen']
