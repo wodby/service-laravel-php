@@ -35,6 +35,7 @@ derivatives:
   required: false
   
 build:
+  dockerfile: Dockerfile
   connect: true
   templates:
   - name: boilerplate
