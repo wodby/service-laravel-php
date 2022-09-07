@@ -12,6 +12,7 @@ labels:
 options:
 - version: '8.1'
   default: true
+- version: '8.0'
 
 links:
 - name: redis
