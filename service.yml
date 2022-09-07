@@ -2,8 +2,11 @@ name: php-laravel
 type: service
 beta: true
 from: php
-image: wodby/laravel-php
 title: PHP (Laravel)
+
+containers:
+- name: php
+  image: wodby/laravel-php
 
 update: auto
 
