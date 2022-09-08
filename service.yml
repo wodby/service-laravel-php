@@ -23,7 +23,7 @@ env:
   value: '{{app_key}}'
 - name: LARAVEL_APP_DEBUG
   value: true
-  env: dev
+  envType: dev
 
 cron:
 - name: scheduler 
