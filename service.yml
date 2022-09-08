@@ -68,6 +68,7 @@ tokens:
 actions:
 - name: database_migrate
   title: Run migrate
+  weight: -1
   args: 
   - php
   - artisan
