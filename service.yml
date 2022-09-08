@@ -8,10 +8,6 @@ containers:
 - name: php
   image: wodby/laravel-php
 
-env:
-- name: LOG_CHANNEL
-  value: stderr
-
 update: auto
 
 labels:
@@ -21,6 +17,19 @@ options:
 - version: '8.1'
   default: true
 - version: '8.0'
+
+env:
+- name: APP_KEY
+  value: '{{app_key}}'
+- name: LARAVEL_APP_DEBUG
+  value: true
+  env: dev
+
+cron:
+- name: scheduler 
+  title: Task Scheduler
+  command: cd "${APP_ROOT}" && php artisan schedule:run
+  schedule: 0 0 * * *
 
 links:
 - name: redis
@@ -51,3 +60,17 @@ build:
     repo: https://github.com/rappasoft/laravel-boilerplate
     tag: ^8
     pipeline: pipeline.yml
+
+tokens:
+- name: app_key
+  generate:
+    regex: '[0-9a-z]{32}'
+
+actions:
+- name: database_migrate
+  title: Run migrate
+  args: 
+  - php
+  - artisan
+  - migrate
+  type: post_deploy
