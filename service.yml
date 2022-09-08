@@ -74,3 +74,11 @@ actions:
   - artisan
   - migrate
   type: post_deploy
+- name: database_migrate
+  title: Run migrate
+  template: boilerplate
+  args: 
+  - php
+  - artisan
+  - db:seed
+  type: post_deploy_once
