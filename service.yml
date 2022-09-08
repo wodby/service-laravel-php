@@ -8,6 +8,10 @@ containers:
 - name: php
   image: wodby/laravel-php
 
+env:
+- name: LOG_CHANNEL
+  value: stderr
+
 update: auto
 
 labels:
