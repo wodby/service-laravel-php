@@ -1,6 +1,5 @@
 name: laravel-php
 type: service
-beta: true
 from: php
 title: PHP (Laravel)
 
