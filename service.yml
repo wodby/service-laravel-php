@@ -7,10 +7,18 @@ containers:
 - name: php
   image: wodby/laravel-php
 
+links:
+- name: storage
+  title: Storage
+  required: true
+  selectors:
+  - type: storage
+
 volumes:
-- name: files
-  title: Files
+- name: storage
+  title: Storage
   shared: true
+  link: storage
   path: /mnt/files
   size: 10
 
