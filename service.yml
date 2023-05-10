@@ -26,10 +26,8 @@ links:
 volumes:
 - name: storage
   title: Storage
-  shared: true
   link: storage
   path: /mnt/files
-  size: 10
 
 update: auto
 
