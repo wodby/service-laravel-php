@@ -22,6 +22,9 @@ links:
   - type: datastore
     labels:
     - redis
+  - type: datastore
+    labels:
+    - valkey
 
 volumes:
 - name: storage
