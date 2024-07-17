@@ -73,8 +73,8 @@ build:
   templates:
   - name: boilerplate
     title: Laravel Boilerplate
-    repo: https://github.com/rappasoft/laravel-boilerplate
-    tag: ^8
+    repo: https://github.com/laravel/laravel
+    tag: ^11
     pipeline: pipeline.yml
 
 tokens:
