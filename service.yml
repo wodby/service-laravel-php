@@ -13,15 +13,15 @@ links:
   required: true
   selectors:
   - type: storage
-- name: valkey
-  title: Valkey
+- name: redis
+  title: Redis
   env:
   - name: QUEUE_CONNECTION
-    value: valkey
+    value: redis
   selectors:
   - type: datastore
     labels:
-    - valkey
+    - redis
 
 volumes:
 - name: storage
