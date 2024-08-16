@@ -14,9 +14,9 @@ jobs:
         path: ~/.composer
         key: 'composer-{{ hash "composer.lock" }}-v1'
 
-    - cache_restore:
-        path: node_modules
-        key: 'npm-{{ hash "yarn.lock" }}-v1'
+#    - cache_restore:
+#        path: node_modules
+#        key: 'npm-{{ hash "yarn.lock" }}-v1'
 
     - run: wget -qO- https://api.wodby.com/api/v1/get/cli?version=2.0 | sh
     - run: wodby ci init $WODBY_BUILD_ID
