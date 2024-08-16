@@ -46,7 +46,6 @@ options:
 - version: '8.3'
   default: true
 - version: '8.2'  
-- version: '8.1'
 
 env:
 - name: APP_KEY
