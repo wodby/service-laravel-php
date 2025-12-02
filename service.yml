@@ -17,7 +17,7 @@ links:
   title: Redis
   env:
   - name: QUEUE_CONNECTION
-    value: redis
+    value: '{{link.host}}'
   selectors:
   - type: datastore
     labels:
