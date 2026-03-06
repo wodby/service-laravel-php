@@ -43,8 +43,10 @@ labels:
 - laravel
 
 options:
-- version: '8.3'
+- version: '8.4'
   default: true
+- version: '8.5'
+- version: '8.3'
 - version: '8.2'  
 
 env:
