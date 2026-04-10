@@ -26,7 +26,7 @@ jobs:
         key: 'composer-{{ hash "composer.lock" }}-v1'
         path: ~/.composer
 
-#    - run: wodby ci run -i wodby/node -- npm i
+#    - run: wodby ci run -i wodby/node -- npm ci
 #    - cache_save:
 #        key: 'npm-{{ hash "yarn.lock" }}-v1'
 #        path: node_modules
