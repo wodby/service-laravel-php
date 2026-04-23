@@ -3,10 +3,6 @@ type: service
 from: php
 title: PHP (Laravel)
 
-containers:
-- name: php
-  image: wodby/laravel-php
-
 links:
 - name: storage
   title: Storage
@@ -47,7 +43,7 @@ options:
   default: true
 - version: '8.5'
 - version: '8.3'
-- version: '8.2'  
+- version: '8.2'
 
 env:
 - name: APP_KEY
@@ -57,7 +53,7 @@ env:
   envType: dev
 
 cron:
-- name: scheduler 
+- name: scheduler
   title: Task Scheduler
   command: cd "${APP_ROOT}" && php artisan schedule:run
   schedule: 0 0 * * *
@@ -70,7 +66,7 @@ derivatives:
   type: service
   default: true
   required: false
-  
+
 build:
   dockerfile: Dockerfile
   connect: true
@@ -89,7 +85,7 @@ tokens:
 actions:
 - name: database_migrate
   title: Run migrate
-  args: 
+  args:
   - php
   - artisan
   - migrate
@@ -98,8 +94,15 @@ actions:
   title: Seed database
   depends:
   - database_migrate
-  args: 
+  args:
   - php
   - artisan
   - db:seed
   type: post_deploy_once
+workloads:
+- id: main
+  kind: deployment
+  primary: true
+  containers:
+  - name: php
+    image: wodby/laravel-php
