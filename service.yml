@@ -107,3 +107,4 @@ workloads:
   containers:
   - name: php
     image: wodby/laravel-php
+    build: true
