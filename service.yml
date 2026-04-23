@@ -99,6 +99,7 @@ actions:
   - artisan
   - db:seed
   type: post_deploy_once
+
 workloads:
 - id: main
   kind: deployment
