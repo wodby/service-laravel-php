@@ -33,7 +33,6 @@ volumes:
     owner: 82
     group: 82
 
-update: auto
 
 labels:
 - laravel
