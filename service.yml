@@ -1,6 +1,7 @@
 name: laravel-php
 type: service
 from: php
+fromVersion: "^1.0.0"
 title: PHP (Laravel)
 
 links:
