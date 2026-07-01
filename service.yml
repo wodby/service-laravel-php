@@ -2,7 +2,7 @@ name: laravel-php
 type: service
 from: php
 fromVersionConstraint: "^1.0.0"
-fromVersion: "1.0.0"
+fromVersion: "1.0.1"
 title: PHP (Laravel)
 
 links:
