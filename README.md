@@ -9,10 +9,10 @@ configuration for PHP (Laravel).
 - [Wodby service documentation](https://wodby.com/docs/2.0/services/)
 - [Service manifest reference](https://wodby.com/docs/2.0/services/template/)
 
-## Start with a template
+## Start with a boilerplate
 
-Use one of the source templates exposed by this service to start with
-compatible build configuration and Wodby CI:
+Use one of the boilerplates exposed by this service to start with compatible
+build configuration and Wodby CI:
 
 - [Laravel Boilerplate](https://github.com/laravel/laravel)
 
@@ -32,7 +32,7 @@ compatible build configuration and Wodby CI:
 | Containers | `php` using `wodby/laravel-php`, build target |
 | Service links | Storage, required, Redis, optional |
 | Volumes | Storage, 10 GB, shared, linked through `storage` |
-| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; starters: Laravel Boilerplate |
+| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Laravel Boilerplate |
 | Configuration | 1 generated or fixed tokens |
 | Operations | 2 actions, 1 cron schedules |
 
