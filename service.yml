@@ -3,7 +3,6 @@ type: service
 from: php
 fromVersionConstraint: "^1.0.0"
 fromVersion: "1.0.3"
-fromOptionVersionConstraint: "^8.3"
 title: PHP (Laravel)
 
 links:
@@ -75,11 +74,12 @@ derivatives:
 build:
   dockerfile: Dockerfile
   connect: true
-  templates:
+  boilerplates:
   - name: boilerplate
     title: Laravel Boilerplate
     repo: https://github.com/laravel/laravel
     tag: ^13
+    optionVersionConstraint: "^8.3"
     pipeline: pipeline.yml
 
 tokens:

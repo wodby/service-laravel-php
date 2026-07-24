@@ -27,7 +27,7 @@ compatible build configuration and Wodby CI:
 | Service name | `laravel-php` |
 | Type | Application service |
 | Inherits from | [`php`](https://github.com/wodby/service-php) with version constraint `^1.0.0` |
-| Versions | `8.4` by default; also available: `8.5`, `8.3` |
+| Versions | `8.4` by default; also available: `8.5`, `8.3`, `8.2` |
 | Workloads | `main` (Deployment), primary |
 | Containers | `php` using `wodby/laravel-php`, build target |
 | Service links | Storage, required, Redis, optional |
@@ -35,6 +35,8 @@ compatible build configuration and Wodby CI:
 | Application build | Git source connection enabled; Dockerfile: `Dockerfile`; starters: Laravel Boilerplate |
 | Configuration | 1 generated or fixed tokens |
 | Operations | 2 actions, 1 cron schedules |
+
+The Laravel 13 boilerplate requires PHP `^8.3`. PHP 8.2 remains available when using a connected repository.
 
 ## Use this service
 
