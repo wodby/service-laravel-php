@@ -80,7 +80,6 @@ build:
     repo: https://github.com/wodby/laravel-boilerplate
     branch: main
     optionVersionConstraint: "^8.3"
-    pipeline: pipeline.yml
 
 tokens:
 - name: app_key
