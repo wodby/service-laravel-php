@@ -76,9 +76,9 @@ build:
   connect: true
   boilerplates:
   - name: boilerplate
-    title: Laravel Boilerplate
-    repo: https://github.com/laravel/laravel
-    tag: ^13
+    title: Laravel on Wodby
+    repo: https://github.com/wodby/laravel-boilerplate
+    branch: main
     optionVersionConstraint: "^8.3"
     pipeline: pipeline.yml
 

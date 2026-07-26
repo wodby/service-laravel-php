@@ -14,7 +14,7 @@ configuration for PHP (Laravel).
 Use one of the boilerplates exposed by this service to start with compatible
 build configuration and Wodby CI:
 
-- [Laravel Boilerplate](https://github.com/laravel/laravel)
+- [Laravel on Wodby](https://github.com/wodby/laravel-boilerplate)
 
 ## Wodby stacks using this service
 
@@ -32,11 +32,11 @@ build configuration and Wodby CI:
 | Containers | `php` using `wodby/laravel-php`, build target |
 | Service links | Storage, required, Redis, optional |
 | Volumes | Storage, 10 GB, shared, linked through `storage` |
-| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Laravel Boilerplate |
+| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Laravel on Wodby |
 | Configuration | 1 generated or fixed tokens |
 | Operations | 2 actions, 1 cron schedules |
 
-The Laravel 13 boilerplate requires PHP `^8.3`. PHP 8.2 remains available when using a connected repository.
+The Wodby Laravel boilerplate requires PHP `^8.3`. PHP 8.2 remains available when using a connected repository.
 
 ## Use this service
 
