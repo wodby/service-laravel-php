@@ -55,6 +55,8 @@ env:
 - name: LARAVEL_APP_DEBUG
   value: 'true'
   envType: dev
+- name: WODBY_INIT_ACTION
+  value: init-laravel
 
 cron:
 - name: scheduler
@@ -72,7 +74,6 @@ derivatives:
   required: false
 
 build:
-  dockerfile: Dockerfile
   connect: true
   boilerplates:
   - name: boilerplate
