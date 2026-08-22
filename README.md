@@ -26,7 +26,7 @@ build configuration and Wodby CI:
 | --- | --- |
 | Service name | `laravel-php` |
 | Type | Application service |
-| Inherits from | [`php`](https://github.com/wodby/service-php) with version constraint `^1.0.0` |
+| Inherits from | [`php`](https://github.com/wodby/service-php) with version constraint `^2.0.0` |
 | Versions | `8.4` by default; also available: `8.5`, `8.3`, `8.2` |
 | Workloads | `main` (Deployment), primary |
 | Containers | `php` using `wodby/laravel-php`, build target |
