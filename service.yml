@@ -55,7 +55,7 @@ env:
 - name: LARAVEL_APP_DEBUG
   value: 'true'
   envType: dev
-- name: WODBY_INIT_ACTION
+- name: WODBY2_SERVICE_INIT_ACTION
   value: init-laravel
 
 cron:
