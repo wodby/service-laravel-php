@@ -15,8 +15,16 @@ links:
 - name: redis
   title: Redis
   env:
-  - name: QUEUE_CONNECTION
+  - name: REDIS_HOST
     value: '{{link.host}}'
+  - name: REDIS_PORT
+    value: '{{link.port}}'
+  - name: REDIS_PASSWORD
+    value: '{{link.tokens.password}}'
+    secret: true
+  # The name of Laravel's Redis queue connection, not the server's address.
+  - name: QUEUE_CONNECTION
+    value: redis
   selectors:
   - type: datastore
     labels:
@@ -57,7 +65,9 @@ options:
 env:
 - name: APP_KEY
   value: '{{app_key}}'
-- name: LARAVEL_APP_DEBUG
+  secret: true
+# The name the image writes to the generated .env.
+- name: APP_DEBUG
   value: 'true'
   envType: dev
 - name: WODBY2_SERVICE_INIT_ACTION
@@ -67,7 +77,8 @@ cron:
 - name: scheduler
   title: Task Scheduler
   command: cd "${APP_ROOT}" && php artisan schedule:run
-  schedule: 0 0 * * *
+  # Laravel's scheduler decides each minute which tasks are due.
+  schedule: '* * * * *'
 
 derivatives:
 - name: laravel-php-queue
@@ -99,6 +110,8 @@ actions:
   - php
   - artisan
   - migrate
+  # Never waits for a confirmation, whatever the application environment.
+  - --force
   type: post_deploy
 - name: database_seed
   title: Seed database
