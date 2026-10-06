@@ -44,7 +44,7 @@ Only `storage/app/public` is on the volume. The rest of `storage`, such as logs 
 ## What the service runs
 
 - After every deployment: `php artisan migrate --force`. After the first deployment only, once migrations have run: `php artisan db:seed`.
-- One cron job runs `php artisan schedule:run` every minute, as Laravel's scheduler expects. Define scheduled tasks in the application; do not add cron jobs for them.
+- One cron job runs `php artisan schedule:run` every hour, at minute 0, which is the most often a service schedule can run. Tasks scheduled for other minutes do not run from it: schedule them on the hour, or run `php artisan schedule:work` as a long-running process.
 - The optional Laravel Queue service derived from this one runs `php artisan queue:listen`.
 
 Do not add migration or queue worker commands to the build or to a start script.

@@ -77,8 +77,9 @@ cron:
 - name: scheduler
   title: Task Scheduler
   command: cd "${APP_ROOT}" && php artisan schedule:run
-  # Laravel's scheduler decides each minute which tasks are due.
-  schedule: '* * * * *'
+  # A service schedule can run at most once an hour. Laravel's scheduler then
+  # runs the tasks due at that minute.
+  schedule: 0 * * * *
 
 derivatives:
 - name: laravel-php-queue
