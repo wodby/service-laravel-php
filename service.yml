@@ -7,6 +7,12 @@ fromVersion: "3.1.0"
 title: PHP (Laravel)
 
 links:
+# Laravel's MySQL and MariaDB connections read the CA certificate path from MYSQL_ATTR_SSL_CA and connect with TLS
+# when it is set.
+- name: db
+  env:
+  - name: MYSQL_ATTR_SSL_CA
+    value: '{{link.database.caFile}}'
 - name: storage
   title: Storage
   required: true
