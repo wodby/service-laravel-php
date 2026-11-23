@@ -3,7 +3,7 @@ type: service
 from: php
 guidance: GUIDANCE.md
 fromVersionConstraint: "^3.0.0"
-fromVersion: "3.4.5"
+fromVersion: "3.4.6"
 title: PHP (Laravel)
 
 links:
@@ -57,25 +57,25 @@ labels:
 options:
 - version: '8.4'
   default: true
-  tag: 8.4-r19
-  digest: sha256:edde811acb9f3886d0e7cd336e20347eb81ad9445262ea00b19884f70ee8e8b7
-  devTag: 8.4-dev-r19
-  devDigest: sha256:813731a3e671bb6c5420edb682203483bc087f94d100bd5a4b07447e689f37f5
+  tag: 8.4-r20
+  digest: sha256:bf88e861ba0d2315bea4b2f318620889a66f583d6b3ecdbfe7c9ed912bfa1ab2
+  devTag: 8.4-dev-r20
+  devDigest: sha256:46763fa3f5bf1445715966faef06eb48fb63f167f07a9dc3e45e60992da3a191
 - version: '8.5'
-  tag: 8.5-r19
-  digest: sha256:d10ced245d4a0c9fc83f1cd1e5cd05b65878d0cc6edd25a23bcf37d9999bfe6f
-  devTag: 8.5-dev-r19
-  devDigest: sha256:665aa148e177198b425cd4bd4d2b461bc9b036e14f143cfeeb9d516124dcec1a
+  tag: 8.5-r20
+  digest: sha256:c18d1e5dbe02a30fdce41d7841806865bc40508c8766f2887cfedfb4ab94f928
+  devTag: 8.5-dev-r20
+  devDigest: sha256:15e0c49f4aed07513bbffea4c8a9627a763a3ee58bf0f95b05ead1c6c20655f1
 - version: '8.3'
-  tag: 8.3-r19
-  digest: sha256:15b04ae45b05ff956c7f92c56227944a9e4ecc664d6c170b3374d43b183972c0
-  devTag: 8.3-dev-r19
-  devDigest: sha256:d20d9466f027125150e4593b2f292eda59045cd809c257cb7b7f9b53f6939d07
+  tag: 8.3-r20
+  digest: sha256:b7f9a4f7d17228816ea14eebc9bbd40d55ae89bd237ea1f864e65b76684a9088
+  devTag: 8.3-dev-r20
+  devDigest: sha256:799853aa47f5cfd7bd659d9e56a12044ca3151adafb2a0622f7fbd8e2b90efb4
 - version: '8.2'
-  tag: 8.2-r19
-  digest: sha256:5d59ccd7afc662b0cdcb7a63ffeb1f71f48f1abca4329cab2af309ea2d1f64ec
-  devTag: 8.2-dev-r19
-  devDigest: sha256:b45a0bafacbf52a613ea3ad2451d207e6838b2ebf759223517fde05fe4b35b26
+  tag: 8.2-r20
+  digest: sha256:da467a472e8e420b52c08c57618a9078ce22be0f98156295edab763efc291774
+  devTag: 8.2-dev-r20
+  devDigest: sha256:b2f796c49858494a2abe3322e23b3b00eaa9abe28e2dc6404348fdf067f02cab
 env:
 - name: APP_KEY
   value: '{{app_key}}'
