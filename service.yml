@@ -119,6 +119,8 @@ tokens:
     regex: '[0-9a-z]{32}'
 
 actions:
+# Runs before the new version rolls out, while the previous version keeps
+# serving, so migrations must keep working with the previous version.
 - name: database_migrate
   title: Run migrate
   args:
@@ -127,7 +129,7 @@ actions:
   - migrate
   # Never waits for a confirmation, whatever the application environment.
   - --force
-  type: post_deploy
+  type: pre_deploy
 - name: database_seed
   title: Seed database
   depends:
