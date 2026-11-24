@@ -43,7 +43,7 @@ Only `storage/app/public` is on the volume. The rest of `storage`, such as logs 
 
 ## What the service runs
 
-- After every deployment: `php artisan migrate --force`. After the first deployment only, once migrations have run: `php artisan db:seed`.
+- On every deployment: `php artisan migrate --force`, in a job of the new version, before its pods are replaced. On the first deployment it runs right after the install. If it fails, the deployment stops before the rollout. The previous version keeps serving until the new one is ready, and keeps serving if the deployment fails, so migrations must keep working with the previous version: add columns and tables first, remove or rename them in a later release. After the first deployment only, once migrations have run: `php artisan db:seed`.
 - One cron job runs `php artisan schedule:run` every hour, at minute 0, which is the most often a service schedule can run. Tasks scheduled for other minutes do not run from it: schedule them on the hour, or run `php artisan schedule:work` as a long-running process.
 - The optional Laravel Queue service derived from this one runs `php artisan queue:listen`.
 
